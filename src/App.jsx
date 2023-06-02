@@ -8,29 +8,43 @@ function App() {
   const featuredPup = puppies.find((pup) => pup.id === featPupId);
   console.log(featuredPup);
   return (
-    <div>
+    <div className="puppies-list-info">
       {featPupId && (
-        <div>
-          <h2>{featuredPup.name}</h2>
-          <ul>
-            <li>Age: {featuredPup.age}</li>
-            <li>Email: {featuredPup.email}</li>
-          </ul>
+        <div className="position-relative">
+          <div className="info-puppy">
+            <hr className="right-hr" />
+            <hr className="left-hr" />
+            <div className="info-puppy-div ">
+              {" "}
+              <b>Name</b>
+            </div>
+            <h2>{featuredPup.name}</h2>
+            <ul className="info-list-puppy">
+              <li>
+                <b>Age:</b> {featuredPup.age}
+              </li>
+              <li>
+                <b>Email:</b> {featuredPup.email}
+              </li>
+            </ul>
+          </div>
         </div>
       )}
-
-      {puppies.map((puppy) => {
-        return (
-          <p
-            onClick={() => {
-              setFeatPupId(puppy.id);
-            }}
-            key={puppy.id}
-          >
-            {puppy.name}
-          </p>
-        );
-      })}
+      <div className="list-puppies">
+        <p>Puppies List</p>
+        {puppies.map((puppy) => {
+          return (
+            <p
+              onClick={() => {
+                setFeatPupId(puppy.id);
+              }}
+              key={puppy.id}
+            >
+              {puppy.name}
+            </p>
+          );
+        })}
+      </div>
     </div>
   );
 }
