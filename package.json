@@ -2,7 +2,7 @@
   "name": "vite",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://fredozone.github.io/Puppy-Pals/",
+  "homepage": "http://fredozone.github.io/Puppy-Pals/",
   "type": "module",
   "scripts": {
     "dev": "vite",
